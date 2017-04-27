@@ -10,6 +10,9 @@ export class AppComponent {
 
   nameAdded(event: Event) {
     this.names.push(event);
-    console.log(this.names.length);
+  }
+
+  nameDeleted(event: number) {
+    delete this.names[event];
   }
 }

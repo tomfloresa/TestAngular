@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-names-list',
@@ -7,10 +7,15 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NamesListComponent implements OnInit {
   @Input() nameElement: string;
+  @Input() elementIndex: number;
+  @Output() eventDeleteName: EventEmitter<any> = new EventEmitter();
 
   constructor() { }
 
   ngOnInit() {
   }
 
+  deleteName() {
+    this.eventDeleteName.emit(this.elementIndex);
+  }
 }

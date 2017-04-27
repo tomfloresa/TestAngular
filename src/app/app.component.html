@@ -7,8 +7,10 @@
   </div>
   <div class="row">
     <div class="col-lg-8 col-lg-offset-2">
-      <app-names-list *ngFor="let name of names"
-       [nameElement]="name"></app-names-list>
+      <app-names-list *ngFor="let name of names; let index = index;"
+       [nameElement]="name"
+       [elementIndex]="index"
+       (eventDeleteName)="nameDeleted($event)"></app-names-list>
     </div>
   </div>
 </div>
